@@ -49,6 +49,16 @@ public extension Date {
         self.init(timeInterval:0, since:date)
     }
     
+    // convert current date to  milliseconds
+    var millisecondsSince1970:Int {
+        return Int((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+    
+    // return date from milliseconds
+    init(milliseconds:Int) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds / 1000))
+    }
+    
     // MARK: Convert to String
     
     
